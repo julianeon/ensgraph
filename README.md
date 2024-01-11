@@ -8,7 +8,7 @@ Note: you'll need an API key from the graph, and you'll need to change the part 
 
 You can run the app locally by running these commands:
 
-cd <directory>
+`cd ensgraph`
 
 `npm install`
 
