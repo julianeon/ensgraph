@@ -10,8 +10,8 @@ You can run the app locally by running these commands:
 
 cd <directory>
 
-npm install 
+`npm install`
 
-npm start
+`npm start`
 
 Go to localhost:3000 and you should see the data displayed.
