@@ -2,11 +2,13 @@
 
 This is an express app to display data about ENS domains, from the Graph.
 
+The relevant code is in server.js and public/displayData.html.
+
 ![screen output](ens_graph.png)
 
 # How to Run
 
-Note: you'll need an API key from the graph, and you'll need to change the part of the code where I specify that API key, for this to work.
+Note: you'll need an API key from the Graph. You'll also need to change the part of the code where I specify the API key in server.js.
 
 You can run the app locally by running these commands:
 
