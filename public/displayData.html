@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Display</title>
+</head>
+<body>
+    <h1>Data from GraphQL</h1>
+    <div id="data-container">
+        <!-- Data will be displayed here -->
+    </div>
+    <script>
+        async function fetchData() {
+            try {
+                const response = await fetch('/fetch-data');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                const container = document.getElementById('data-container');
+
+                // Display Domains
+                let html = '<h2>Domains</h2><ul>';
+                data.domains.forEach(domain => {
+                    html += `<li>ID: ${domain.id}, Name: ${domain.name}, LabelName: ${domain.labelName}, Labelhash: ${domain.labelhash}</li>`;
+                });
+                html += '</ul>';
+
+                // Display Transfers
+                html += '<h2>Transfers</h2><ul>';
+                data.transfers.forEach(transfer => {
+                    html += `<li>ID: ${transfer.id}, Domain ID: ${transfer.domain.id}, Block Number: ${transfer.blockNumber}, Transaction ID: ${transfer.transactionID}</li>`;
+                });
+                html += '</ul>';
+
+                container.innerHTML = html;
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                document.getElementById('data-container').innerHTML = '<p>Error loading data</p>';
+            }
+        }
+
+        fetchData();
+    </script>
+</body>
+</html>
