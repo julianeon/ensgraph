@@ -2,6 +2,8 @@
 
 This is an express app to display data about ENS domains, from the Graph.
 
+![screen output](ens_graph.png)
+
 # How to Run
 
 Note: you'll need an API key from the graph, and you'll need to change the part of the code where I specify that API key, for this to work.
