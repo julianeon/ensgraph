@@ -3,8 +3,8 @@ const fs=require('fs');
 const cors= require('cors');
 const path = require('path');
 const port = 3000;
+const graphqlQuery = require('./graph_query.js');
 
-// Import fetch dynamically
 import('node-fetch').then(fetchModule => {
   const fetch = fetchModule.default;
 
@@ -15,7 +15,7 @@ import('node-fetch').then(fetchModule => {
   const GRAPHQL_ENDPOINT = 'https://api.thegraph.com/subgraphs/name/ensdomains/ens';
   const API_KEY = process.env.GRAPH_API_KEY;
 
-  const graphqlQuery = {
+  const egraphqlQuery = {
     query: `
     {
       domains(first: 5) {
